@@ -1,0 +1,143 @@
+:root {
+  --primary-blue: #1e293b;
+  --secondary-blue: #334155;
+  --accent-blue: #3b82f6;
+  --text-light: #f8fafc;
+  --text-dark: #1e293b;
+  --bg-paper: #ffffff;
+  --bg-body: #0f172a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sora", sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148,163,184,.45) rgba(255,255,255,.04);
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--bg-body);
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 0
+  );
+  background-size: 40px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.ce {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-button {
+  margin: 40px;
+  display: flex;
+  gap: 1rem;
+}
+.btn-option {
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  border: none;
+  gap: 1rem;
+}
+.option-lgn {
+  display: inline-block;
+  background-color: #c4d1e2;
+  box-shadow: 3px 5px #1e293b;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+.shw:active {
+  transform: translateY(3px);
+  box-shadow: 1px 2px #1e293b;
+}
+
+.lgn {
+  background-color: #4f6f9c;
+  color: #1e293b;
+}
+.imp {
+  background-color: #1283c4;
+  color: #dae2ee;
+  cursor: pointer;
+}
+
+.README {
+  max-width: 850px;
+  width: 85%;
+  text-align: justify;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: #414952;
+}
+.version-tech{
+  margin: 10px;
+  display: flex;
+  gap: 10px;
+}
+.data-info {
+  width: 100%;
+  margin: 10px auto 20px auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.data-info div{
+  display: flex;
+  gap: 5px;
+}
+
+.add-data {
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.version {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--accent-blue);
+  background: rgba(59, 130, 246, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+.html{
+  background-color: rgba(255, 68, 0, 0.25);
+  color: rgba(255, 166, 0, 0.64);
+  border: 1px solid rgba(255, 166, 0, 0.25);
+}
+.css {
+  background-color: rgba(0, 0, 255, 0.25);
+  color: rgba(0, 255, 255, 0.64);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+}
+.js{
+  background-color: rgba(255, 166, 0, 0.25);
+  color: rgba(255, 255, 0, 0.64);
+  border: 1px solid rgba(255, 255, 0, 0.25);
+}
+.html,.css,.js{
+  font-weight: bold;
+}
+

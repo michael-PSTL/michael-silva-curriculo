@@ -1,0 +1,229 @@
+/*curriculo*/
+
+.paper {
+  width: 95%;
+  max-width: 900px;
+  min-height: 1000px;
+  background-color: var(--bg-paper);
+  border: 1px solid white;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+  overflow: hidden;
+}
+
+header {
+  grid-area: header;
+  background-color: var(--primary-blue);
+  color: var(--text-light);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-bottom: 2px solid var(--accent-blue);
+}
+
+.perfil {
+  border: 2px solid var(--text-light);
+  border-radius: 10px;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.apresentation h2 {
+  font-size: 2.2rem;
+}
+
+.apresentation h3 {
+  font-size: 1.2rem;
+  color: var(--accent-blue);
+}
+
+main {
+  grid-area: main;
+  padding: 20px 40px;
+  color: var(--text-dark);
+}
+
+main h3 {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  border-bottom: 2px solid var(--accent-blue);
+  display: inline-block;
+  margin: 20px 0;
+}
+
+main h3[data-i18n="skills_title"] + ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  list-style-position: inside;
+  margin-left: 10px;
+  padding: 0;
+}
+
+@media (max-width: 600px) {
+  main h3[data-i18n="skills_title"] + ul {
+    grid-template-columns: 1fr;
+  }
+}
+.bloco-projeto {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background: white;
+  border: 1px solid rgba(121, 119, 119, 0.329);
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.bloco-projeto:hover {
+  transform: translateX(5px);
+}
+
+aside {
+  grid-area: aside;
+  background-color: #f1f5f9;
+  padding: 20px;
+  border-left: 1px solid #e2e8f0;
+}
+
+.tecnologia {
+  color: var(--secondary-blue);
+}
+
+aside h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--secondary-blue);
+  letter-spacing: 1px;
+  margin: 20px 0;
+}
+
+.bloco-tecnologia {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 15px;
+  padding: 8px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.bloco-tecnologia:hover {
+  transform: translateX(5px);
+}
+
+.bloco-tecnologia p {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--secondary-blue);
+}
+
+.bloco-academico {
+  border-left: 2px solid #3b82f6;
+  background-color: rgba(213, 235, 238, 0.301);
+  padding: 1rem;
+  margin-bottom: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.btn-academico {
+  color: white;
+  background-color: #114aa5;
+  border: none;
+  border-radius: 15px;
+  padding: 0.7rem;
+  width: 60%;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+.btn-academico:hover {
+  background-color: #1283c4;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--secondary-blue);
+  color: var(--text-light);
+  padding: 30px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.column-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bloco-contato {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.contato {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 6px;
+  border-radius: 4px;
+  transition: 0.3s ease-out;
+}
+.contato:hover {
+  background-color: #4f6f9c;
+}
+
+@media (max-width: 768px) {
+  .paper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "aside"
+      "footer";
+  }
+  .apresentation h2 {
+    font-size: 1.7rem;
+  }
+  .btn-academico {
+    width: 100%;
+  }
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  footer {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  aside {
+    border-left: none;
+    border-top: 1px solid #ddd;
+  }
+  .list-button {
+    margin: 20px;
+    gap: 0.7rem;
+    scale: 0.9;
+  }
+}

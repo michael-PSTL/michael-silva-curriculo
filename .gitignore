@@ -1,0 +1,16 @@
+# Configurações do VS Code (evita enviar seus temas/plugins pessoais)
+.vscode/
+
+# Arquivos de sistema (Lixo que o Windows e Mac criam sozinhos)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs de erro e arquivos temporários
+*.log
+*.tmp
+
+# Futuros (já deixamos pronto para quando você usar Spring Boot e React)
+node_modules/
+target/
+.env

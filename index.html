@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curriculo - Michael Silva</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="rede.png" type="image/x-icon" />
+    <link rel="stylesheet" href="curriculo.css" />
+    <link rel="stylesheet" href="preview.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div class="list-button">
+      <button class="btn-option lgn ce">
+        <span class="option-lgn shw" data-lang="pt">BR</span> -
+        <span class="option-lgn shw" data-lang="en">EN</span>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+          <use href="assets.svg#language"></use>
+        </svg>
+      </button>
+      <button class="btn-option imp ce" onclick="openPreview()">
+        <p data-i18n="print">Imprimir</p>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+          <use href="assets.svg#download"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="overlay">
+      <div class="buttons-overlay">
+        <button class="button-fechar-overlay shw" onclick="closePreview()">
+          <svg width="30" height="30" viewBox="0 0 24 24">
+            <use href="assets.svg#close"></use>
+          </svg>
+        </button>
+        <button class="btn-option dwn ce shw">
+          Download
+          <svg width="30" height="30" viewBox="0 0 24 24">
+            <use href="assets.svg#pdf"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="preview"></div>
+    </div>
+    <div class="paper">
+      <header>
+        <div class="perfil ce">
+          <svg width="70" height="70" viewBox="0 0 24 24" fill="currentColor">
+            <use href="assets.svg#perfil"></use>
+          </svg>
+        </div>
+        <div class="apresentation">
+          <h2>Michael Silva Soares</h2>
+          <h3 data-i18n="role">Engenheiro de Software</h3>
+        </div>
+      </header>
+
+      <main>
+        <h3 data-i18n="about_title">Objetivo</h3>
+        <p data-i18n="about_text">
+          Atuar na área de tecnologia/desenvolvimento, aplicando uma visão
+          criativa e analítica para transformar ideias em soluções práticas e
+          bem estruturadas. Busco constante evolução profissional, com foco em
+          organização, autonomia e entrega de resultados com qualidade e
+          propósito.
+        </p>
+        <h3 data-i18n="skills_title">Competências</h3>
+        <ul>
+          <li data-i18n="skill_1">Pensamento Analítico</li>
+          <li data-i18n="skill_2">Código Limpo & Qualidade</li>
+          <li data-i18n="skill_3">Metodologias Ágeis</li>
+          <li data-i18n="skill_4">Resiliência Técnica</li>
+          <li data-i18n="skill_5">Comunicação objetiva</li>
+          <li data-i18n="skill_6">Aprendizado Autônomo</li>
+        </ul>
+        <h3 data-i18n="projects_title" class="projetos-title">Projetos</h3>
+        <a class="bloco-projeto" href="#">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#link"></use>
+            </svg>
+          </div>
+          <p data-i18n="proj_1">Meu Próprio Portfólio</p>
+        </a>
+        <a class="bloco-projeto" href="#">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#link"></use>
+            </svg>
+          </div>
+          <p data-i18n="proj_2">Fluxo de Compra</p>
+        </a>
+        <a class="bloco-projeto" href="#">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#link"></use>
+            </svg>
+          </div>
+          <p data-i18n="proj_3">Fluxo de Segurança</p>
+        </a>
+        <a class="bloco-projeto" href="#">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#link"></use>
+            </svg>
+          </div>
+          <p data-i18n="proj_4">DevelCraft - Meu Produto</p>
+        </a>
+        <a class="bloco-projeto" href="#">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#link"></use>
+            </svg>
+          </div>
+          <p data-i18n="proj_5">Blog - Por que ter um site?</p>
+        </a>
+
+        <h3 data-i18n="education_title">Formação Acadêmica</h3>
+        <div class="bloco-academico">
+          <div>
+            <h4 data-i18n="edu_1_title">Engenharia de Software - Cursando</h4>
+            <p data-i18n="edu_1_inst">Instituição: Faculdade Anhanguera</p>
+          </div>
+          <button class="btn-academico" style="display: none;">
+            <p data-i18n="edu_btn">Abrir Comprovante</p>
+          </button>
+        </div>
+        <div class="bloco-academico">
+          <div>
+            <h4 data-i18n="edu_2_title">Inglês - Cursando</h4>
+            <p data-i18n="edu_2_inst">
+              Instituição: IFP(Instituto de Formação Profissional)
+            </p>
+          </div>
+          <button class="btn-academico" style="display: none;">
+            <p data-i18n="edu_btn">Abrir Comprovante</p>
+          </button>
+        </div>
+      </main>
+
+      <aside>
+        <h3>Front-End</h3>
+        <div class="bloco-tecnologia">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#HTML"></use>
+            </svg>
+          </div>
+          <p>HTML5</p>
+        </div>
+        <div class="bloco-tecnologia">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#CSS"></use>
+            </svg>
+          </div>
+          <p>CSS3</p>
+        </div>
+        <div class="bloco-tecnologia">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#JavaScript"></use>
+            </svg>
+          </div>
+          <p>JavaScript</p>
+        </div>
+        <div class="bloco-tecnologia" style="display: none;">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#TypeScript"></use>
+            </svg>
+          </div>
+          <p>TypeScript</p>
+        </div>
+        <div class="bloco-tecnologia">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#React"></use>
+            </svg>
+          </div>
+          <p>React</p>
+        </div>
+        <div class="bloco-tecnologia" style="display: none;">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#Next.js"></use>
+            </svg>
+          </div>
+          <p>Next.js</p>
+        </div>
+        <h3>Back-End</h3>
+        <div class="bloco-tecnologia">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#Java"></use>
+            </svg>
+          </div>
+          <p>Java</p>
+        </div>
+        <div class="bloco-tecnologia">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#Spring"></use>
+            </svg>
+          </div>
+          <p>Spring Boot</p>
+        </div>
+        <div class="bloco-tecnologia">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#MySql"></use>
+            </svg>
+          </div>
+          <p>MySQL</p>
+        </div>
+        <div class="bloco-tecnologia">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#python"></use>
+            </svg>
+          </div>
+          <p>Python</p>
+        </div>
+        <h3 data-i18n="tools_title">Ferramentas</h3>
+        <div class="bloco-tecnologia">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#Git"></use>
+            </svg>
+          </div>
+          <p>Git</p>
+        </div>
+        <div class="bloco-tecnologia">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#VsCode"></use>
+            </svg>
+          </div>
+          <p>VsCode</p>
+        </div>
+        <div class="bloco-tecnologia">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#Intellij"></use>
+            </svg>
+          </div>
+          <p>IntelliJ</p>
+        </div>
+        <div class="bloco-tecnologia">
+          <div class="tecnologia ce">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="assets.svg#PyCharm"></use>
+            </svg>
+          </div>
+          <p>PyCharm</p>
+        </div>
+        <h3 data-i18n="languages_title">Idiomas</h3>
+        <div class="bloco-tecnologia">
+          <p data-i18n="lang_en">Inglês - A2</p>
+        </div>
+        <div class="bloco-tecnologia">
+          <p data-i18n="lang_pt">Português - Nativo</p>
+        </div>
+      </aside>
+
+      <footer>
+        <div class="column-contato">
+          <a
+            class="bloco-contato"
+            href="https://wa.me/5598984975025?text=Fiquei%20interessado%20no%20seu%20trabalho"
+            target="_blank"
+          >
+            <div class="contato ce">
+              <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                <use href="assets.svg#phone"></use>
+              </svg>
+            </div>
+            <p>+55 (98) 98497-5025</p>
+          </a>
+          <a
+            class="bloco-contato"
+            href="https://github.com/michael-PSTL"
+            target="_blank"
+          >
+            <div class="contato ce">
+              <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                <use href="assets.svg#github"></use>
+              </svg>
+            </div>
+            <p>michael-PSTL</p>
+          </a>
+        </div>
+        <div class="column-contato">
+          <a
+            class="bloco-contato"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=michael.s11.soares@gmail.com"
+            target="_blank"
+          >
+            <div class="contato ce">
+              <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                <use href="assets.svg#email"></use>
+              </svg>
+            </div>
+            <p>michael.s11.soares@gmail.com</p>
+          </a>
+          <a
+            class="bloco-contato"
+            href="https://www.instagram.com/mik.devcode/"
+            target="_blank"
+          >
+            <div class="contato ce">
+              <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                <use href="assets.svg#instagram"></use>
+              </svg>
+            </div>
+            <p>@mik.devcode</p>
+          </a>
+        </div>
+        <div class="column-contato">
+          <a
+            class="bloco-contato"
+            href="https://www.linkedin.com/in/michael-silva-67a74439b/"
+            target="_blank"
+          >
+            <div class="contato ce">
+              <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                <use href="assets.svg#linkedin"></use>
+              </svg>
+            </div>
+            <p>Michael Silva</p>
+          </a>
+          <a
+            class="bloco-contato"
+            href="https://www.google.com/maps/search/São+Luís+MA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="contato ce">
+              <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                <use href="assets.svg#addrres"></use>
+              </svg>
+            </div>
+            <p>São Luís - MA</p>
+          </a>
+        </div>
+      </footer>
+    </div>
+
+    <div class="version-tech">
+      <span class="version html">HTML</span><span class="version css">CSS</span><span class="version js">JAVASCRIPT</span>
+    </div>
+
+    <p class="README" data-i18n="readme_text">
+      README:Este projeto é um currículo interativo desenvolvido como base para
+      uma aplicação Full-Stack. Além da interface responsiva, ele conta com um
+      sistema de tradução dinâmica (PT-BR/EN) e um modo de visualização
+      otimizado para impressão com QR Code. A arquitetura foi pensada de forma
+      modular utilizando JavaScript puro para garantir performance e facilidade
+      de manutenção. O próximo objetivo é integrar este front-end a uma API Java
+      com Spring Boot e banco de dados MySQL. Também será desenvolvido um painel
+      administrativo em React, permitindo que todo o conteúdo do currículo seja
+      gerenciado dinamicamente através de uma interface de usuário, sem a
+      necessidade de alterar o código-fonte.
+    </p>
+
+    <div class="data-info">
+      <div>
+        <p class="add-data" data-i18n="update_text">
+          ERROR[falha na conexão | conection failed]
+        </p>
+        <p class="add-data" id="lastupdate"></p>
+      </div>
+      <span class="version">v0.1.0</span>
+    </div>
+  </body>
+  <script src="sistema.js"></script>
+</html>

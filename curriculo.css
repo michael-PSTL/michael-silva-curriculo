@@ -204,7 +204,7 @@ footer {
       "footer";
   }
   .apresentation h2 {
-    font-size: 1.7rem;
+    font-size: 1.55rem;
   }
   .btn-academico {
     width: 100%;
@@ -212,6 +212,7 @@ footer {
   header {
     flex-direction: column;
     text-align: center;
+    gap: 1rem;
   }
   footer {
     grid-template-columns: 1fr;

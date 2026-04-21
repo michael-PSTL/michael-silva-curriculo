@@ -271,7 +271,7 @@ function renderAside() {
             </div>
             <p>Java</p>
           </div>
-          <div class="bloco-tecnologia">
+          <div class="bloco-tecnologia" style="display: none;">
             <div class="tecnologia ce">
               <svg width="24" height="24" viewBox="0 0 24 24">
                 <use href="assets.svg#Spring"></use>

@@ -201,7 +201,7 @@ function renderQR() {
 
         <div class="qr-image">
           <img
-            src="qrcode_chrome.png"
+            src="qrcode_michael-curriculo.netlify.app.png"
             alt="QR Code do portfólio"
             width="132"
             height="132"

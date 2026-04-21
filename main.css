@@ -15,6 +15,7 @@
   font-family: "Sora", sans-serif;
   scrollbar-width: thin;
   scrollbar-color: rgba(148,163,184,.45) rgba(255,255,255,.04);
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {

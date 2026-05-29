@@ -1,0 +1,249 @@
+:root {
+  /* colors */
+  --primary-blue: #1e293b;
+  --secondary-blue: #334155;
+  --accent-blue: #3b82f6;
+
+  --text-light: #f8fafc;
+  --text-dark: #1e293b;
+
+  --bg-body: #0f172a;
+  --bg-paper: #ffffff;
+
+  /* spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  /* shadow */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+  --shadow-md: 0 10px 25px rgba(0,0,0,0.15);
+
+  --transition: 0.25s ease;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sora", sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.45) rgba(255, 255, 255, 0.04);
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* BODY */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--bg-body);
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 0
+  );
+  background-size: 40px 40px;
+
+  color: var(--text-dark);
+}
+
+/* UTIL */
+.ce {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TOP BAR */
+.list-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+
+  margin: var(--space-5);
+  max-width: 900px;
+  width: 100%;
+}
+
+.bloco-buttons {
+  display: flex;
+  gap: var(--space-3);
+}
+
+/* STATUS */
+.bloco-status {
+  background: #414952;
+  padding: var(--space-2);
+  border-radius: 10px;
+
+  opacity: 0.6;
+  transition: var(--transition);
+
+  align-self: flex-end;
+  gap: var(--space-2);
+
+  cursor: default;
+}
+
+.bloco-status:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgb(216, 216, 52);
+}
+
+.text-status {
+  font-size: 0.7rem;
+  color: rgb(215, 218, 221);
+}
+
+/* BUTTONS */
+.btn-option {
+  font-weight: bold;
+  padding: var(--space-3) var(--space-4);
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.option-lgn {
+  background: #c4d1e2;
+  box-shadow: 3px 5px #1e293b;
+
+  padding: var(--space-2) var(--space-3);
+  border-radius: 12px;
+
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.shw:active {
+  transform: translateY(3px);
+  box-shadow: 1px 2px #1e293b;
+}
+
+.lgn {
+  background: #4f6f9c;
+  color: var(--text-dark);
+}
+
+.imp {
+  background: #1283c4;
+  color: var(--text-light);
+}
+
+/* README */
+.README {
+  max-width: 850px;
+  width: 85%;
+  text-align: justify;
+
+  margin-bottom: var(--space-6);
+
+  font-weight: 600;
+  color: #414952;
+}
+
+/* DATA INFO */
+.data-info {
+  width: 100%;
+  max-width: 900px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.data-info div {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.add-data {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #64748b;
+}
+
+/* VERSION TECH */
+.version-tech {
+  margin: var(--space-3) auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: min(900px, 95%);
+  gap: var(--space-2);
+}
+
+.version {
+  font-family: monospace;
+  font-size: 0.75rem;
+
+  padding: 2px 8px;
+  border-radius: 6px;
+
+  cursor: default;
+  transition: var(--transition);
+}
+
+.version-tech:hover .version {
+  opacity: 0.6;
+  transform: scale(0.95);
+}
+
+.version-tech .version:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* COLORS */
+.html { background: rgba(255,68,0,0.15); color: orange; border: 1px solid rgb(87, 59, 7); }
+.css { background: rgba(0,0,255,0.15); color: cyan; border: 1px solid rgb(9, 62, 87); }
+.js { background: rgba(255,166,0,0.15); color: yellow; border: 1px solid rgb(73, 70, 33); }
+.java { background: rgba(199,6,6,0.15); color: #ff5050; border: 1px solid #582626; }
+.springboot { background: rgba(21,104,10,0.2); color: #5aff5a; border: 1px solid #1d461d; }
+.mysql { background: rgba(255,255,255,0.2); color: #fff; border: 1px solid #6d6b6b; }
+
+.ver {
+  background: rgba(59,130,246,0.12);
+  color: var(--accent-blue);
+}
+
+/* RESPONSIVE */
+@media (max-width: 764px) {
+  .list-button {
+    flex-direction: column;
+  }
+
+  .bloco-status {
+    align-self: center;
+  }
+}

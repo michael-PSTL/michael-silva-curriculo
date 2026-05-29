@@ -78,11 +78,14 @@ body.overlay {
   box-sizing: border-box;
 
   background: white;
-  color: black;
+  color: var(--secondary-blue);
 
   box-shadow: 0 0 30px rgba(0,0,0,.5);
 }
 @media (max-width: 768px){
+  .overlay{
+    gap: 4rem;
+  }
   .buttons-overlay{
     width: 95mm;
   }
@@ -195,18 +198,22 @@ body.overlay {
   gap: 0.5rem;
 }
 
-.bloco-qr{
-  padding: 0.3rem 0.5rem 1rem 0.5rem;
+.bloco-qr {
+  padding: 0.3rem 0.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 15px;
 }
-.texto-qr{
-  text-align: justify;
+.qr-image {
+  margin-top: 30px;
+}
+.texto-qr {
   width: 55%;
-  margin-top: -15px;
 }
-.bloco-qr img{
-  margin-top: 20px;
+.texto-qr h3 {
+  margin-bottom: 0.5rem;
+}
+.texto-qr p {
+  text-align: justify;
 }

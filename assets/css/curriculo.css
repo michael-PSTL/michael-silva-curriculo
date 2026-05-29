@@ -1,39 +1,43 @@
-/*curriculo*/
-
+/* PAPER LAYOUT */
 .paper {
-  width: 95%;
-  max-width: 900px;
+  width: min(900px, 95%);
   min-height: 1000px;
-  background-color: var(--bg-paper);
-  border: 1px solid white;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
+
+  background: var(--bg-paper);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--secondary-blue);
+
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 2fr 1fr;
-  grid-template-areas:
+  grid-template:
     "header header"
     "main aside"
-    "footer footer";
+    "footer footer"
+    / 2fr 1fr;
+
   overflow: hidden;
 }
 
+/* HEADER */
 header {
   grid-area: header;
-  background-color: var(--primary-blue);
-  color: var(--text-light);
-  padding: 40px;
+
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
+
+  padding: 25px;
+
+  background: var(--primary-blue);
+  color: var(--text-light);
+
   border-bottom: 2px solid var(--accent-blue);
 }
 
 .perfil {
-  border: 2px solid var(--text-light);
+  border: 2px solid white;
   border-radius: 10px;
   padding: 5px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.1);
 }
 
 .apresentation h2 {
@@ -45,27 +49,29 @@ header {
   color: var(--accent-blue);
 }
 
+/* MAIN */
 main {
   grid-area: main;
   padding: 20px 40px;
-  color: var(--text-dark);
 }
 
 main h3 {
   text-transform: uppercase;
   font-size: 1.1rem;
-  border-bottom: 2px solid var(--accent-blue);
+
   display: inline-block;
   margin: 20px 0;
+
+  border-bottom: 2px solid var(--accent-blue);
 }
 
+/* SKILLS GRID */
 main h3[data-i18n="skills_title"] + ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5px;
+  gap: 6px;
+
   list-style-position: inside;
-  margin-left: 10px;
-  padding: 0;
 }
 
 @media (max-width: 600px) {
@@ -73,60 +79,69 @@ main h3[data-i18n="skills_title"] + ul {
     grid-template-columns: 1fr;
   }
 }
+
+/* PROJECTS */
 .bloco-projeto {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  margin-bottom: 15px;
-  padding: 8px;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  padding: 10px;
+
   background: white;
-  border: 1px solid rgba(121, 119, 119, 0.329);
-  color: var(--text-dark);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 6px;
+
+  margin-bottom: 12px;
+
   cursor: pointer;
-  transition: transform 0.2s;
+  color: var(--secondary-blue);
+  transition: var(--transition);
 }
+
 .bloco-projeto:hover {
   transform: translateX(5px);
 }
 
+/* ASIDE */
 aside {
   grid-area: aside;
-  background-color: #f1f5f9;
+
+  background: #f1f5f9;
   padding: 20px;
+
   border-left: 1px solid #e2e8f0;
 }
 
-.tecnologia {
-  color: var(--secondary-blue);
-}
-
 aside h3 {
-  font-size: 0.9rem;
   text-transform: uppercase;
+  font-size: 0.9rem;
+
   text-align: center;
-  margin-bottom: 25px;
-  color: var(--secondary-blue);
-  letter-spacing: 1px;
   margin: 20px 0;
+
+  color: var(--secondary-blue);
 }
 
+/* TECHNOLOGY BLOCKS */
 .bloco-tecnologia {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  margin-bottom: 15px;
+
   padding: 8px;
+  margin-bottom: 12px;
+
   background: white;
   border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-sm);
+
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: var(--transition);
 }
 
 .bloco-tecnologia:hover {
-  transform: translateX(5px);
+  transform: translateX(4px);
 }
 
 .bloco-tecnologia p {
@@ -135,65 +150,77 @@ aside h3 {
   color: var(--secondary-blue);
 }
 
-.bloco-academico {
-  border-left: 2px solid #3b82f6;
-  background-color: rgba(213, 235, 238, 0.301);
+/* ACADEMIC */
+.academico-info {
+  border-left: 2px solid var(--accent-blue);
+  background: rgba(213,235,238,0.3);
+
   padding: 1rem;
   margin-bottom: 15px;
 
   display: flex;
   flex-direction: column;
-  gap: 15px;
-}
-.btn-academico {
-  color: white;
-  background-color: #114aa5;
-  border: none;
-  border-radius: 15px;
-  padding: 0.7rem;
-  width: 60%;
-  cursor: pointer;
-  transition: 0.3s ease-out;
-}
-.btn-academico:hover {
-  background-color: #1283c4;
+  gap: 10px;
 }
 
+.btn-academico {
+  width: 60%;
+  padding: 0.7rem;
+
+  border-radius: 15px;
+  border: none;
+
+  background: #114aa5;
+  color: white;
+
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-academico:hover {
+  background: #1283c4;
+}
+
+/* FOOTER */
 footer {
   grid-area: footer;
-  background-color: var(--secondary-blue);
-  color: var(--text-light);
-  padding: 30px 40px;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
+  gap: 15px;
 
-.column-contato {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  padding: 20px 30px;
+
+  background: var(--secondary-blue);
+  color: var(--text-light);
 }
 
 .bloco-contato {
   display: flex;
   align-items: center;
   gap: 10px;
+
   font-size: 0.8rem;
-  color: var(--text-light);
-  cursor: pointer;
+  color: white;
 }
 
 .contato {
-  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.1);
   padding: 6px;
   border-radius: 4px;
-  transition: 0.3s ease-out;
-}
-.contato:hover {
-  background-color: #4f6f9c;
+
+  transition: var(--transition);
 }
 
+.contato:hover {
+  background: #4f6f9c;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .paper {
     grid-template-columns: 1fr;
@@ -203,28 +230,19 @@ footer {
       "aside"
       "footer";
   }
-  .apresentation h2 {
-    font-size: 1.55rem;
-  }
-  .btn-academico {
-    width: 100%;
-  }
+
   header {
     flex-direction: column;
     text-align: center;
-    gap: 1rem;
   }
+
   footer {
+    display: grid;
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
-  aside {
-    border-left: none;
-    border-top: 1px solid #ddd;
-  }
-  .list-button {
-    margin: 20px;
-    gap: 0.7rem;
-    scale: 0.9;
+
+  .btn-academico {
+    width: 100%;
   }
 }

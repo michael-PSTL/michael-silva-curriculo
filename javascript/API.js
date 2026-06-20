@@ -2,11 +2,44 @@
 
 const API_URL = "https://curriculo-api-qirm.onrender.com";
 
+async function getData(endpoint, cacheKey) {
+  try {
+    const response = await fetch(`${API_URL}/${endpoint}`);
+
+    if (!response.ok) {
+      throw new Error(`Erro HTTP: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    Storage.save(cacheKey, data);
+    Storage.hideWarning();
+
+    return data;
+  } catch (error) {
+    console.error(`Erro ao buscar ${endpoint}:`, error);
+
+    const cache = Storage.load(cacheKey);
+
+    if (cache) {
+      Storage.showWarning(
+        `⚠️ Exibindo dados salvos localmente (${Storage.getLastUpdate(
+          cacheKey,
+        )})`,
+      );
+
+      return cache.data;
+    }
+
+    return null;
+  }
+}
+
 async function fetchTechnologies() {
   try {
-    const response = await fetch(`${API_URL}/technologies`);
+    const technologies = await getData("technologies", "technologies");
 
-    const technologies = await response.json();
+    if (!technologies) return;
 
     const blocoFront = document.querySelector(".bloco-front");
     const blocoBack = document.querySelector(".bloco-back");
@@ -52,8 +85,9 @@ fetchTechnologies();
 let socialLinks = [];
 async function fetchSocialLinks() {
   try {
-    const response = await fetch(`${API_URL}/sociallinks`);
-    socialLinks = await response.json();
+    socialLinks = await getData("sociallinks", "sociallinks");
+
+    if (!socialLinks) return;
 
     const container = document.querySelector("footer");
     container.innerHTML = "";
@@ -82,8 +116,9 @@ fetchSocialLinks();
 
 async function fetchProjects() {
   try {
-    const response = await fetch(`${API_URL}/project`);
-    const projects = await response.json();
+    const projects = await getData("project", "projects");
+
+    if (!projects) return;
 
     const container = document.querySelector(".bloco-projetos");
     container.innerHTML = "";
@@ -114,8 +149,9 @@ fetchProjects();
 
 async function fetchEducation() {
   try {
-    const response = await fetch(`${API_URL}/education`);
-    const education = await response.json();
+    const education = await getData("education","education");
+
+    if (!education) return;
 
     const container = document.querySelector(".bloco-academico");
     container.innerHTML = "";
@@ -154,8 +190,9 @@ fetchEducation();
 
 async function fetchLanguage() {
   try {
-    const response = await fetch(`${API_URL}/language`);
-    const languages = await response.json();
+    const languages = await getData("language", "languages");
+
+    if (!languages) return;
 
     const container = document.querySelector(".bloco-languages");
     container.innerHTML = "";
@@ -186,8 +223,9 @@ fetchLanguage();
 
 async function fetchSkills() {
   try {
-    const response = await fetch(`${API_URL}/competency`);
-    const competences = await response.json();
+    const competences = await getData("competency", "competency");
+
+    if (!competences) return;
 
     const container = document.querySelector(".bloco-competencias");
     container.innerHTML = "";
@@ -210,8 +248,9 @@ fetchSkills();
 
 async function fetchProfileTexts() {
   try {
-    const response = await fetch(`${API_URL}/profiletext`);
-    const data = await response.json();
+    const data = await getData("profiletext", "profiletext");
+
+    if (!data) return;
     const text = data[0];
 
     document.querySelector("#nome").setAttribute("data-i18n", text.nameKey);
@@ -235,7 +274,7 @@ async function fetchProfileTexts() {
     document.querySelector("#lastupdate").textContent = new Date().toLocaleDateString("pt-BR");
 
     setLanguage(currentLang);
-    
+
   } catch (error) {
     console.error("Erro ao buscar profile texts:", error);
   }
